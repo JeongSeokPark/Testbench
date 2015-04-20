@@ -21,9 +21,9 @@ public class Testbench_main extends JApplet{
 	private TF_duration tf_duration_finish;
 	private TF_amplitude tf_x1_amplitude;
 	private TF_amplitude tf_x2_amplitude;
-	private JTextField textField_3;
+	private TF_frequency tf_x1_frequency;
+	private TF_frequency tf_x2_frequency;
 	private JTextField textField_4;	
-	private JTextField textField_6;
 	private JTextField textField_7;
 	
 	public JButton btn_x1_sine = new JButton("Sine");
@@ -93,10 +93,10 @@ public class Testbench_main extends JApplet{
 		lbl_x1_SineCosine.setBounds(145, 490, 50, 20);
 		getContentPane().add(lbl_x1_SineCosine);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(195, 490, 40, 20);
-		getContentPane().add(textField_3);
-		textField_3.setColumns(10);
+		tf_x1_frequency = new TF_frequency();
+		tf_x1_frequency.setBounds(195, 490, 40, 20);
+		getContentPane().add(tf_x1_frequency);
+		tf_x1_frequency.setColumns(10);
 
 		lbl_x1_tplus.setFont(new Font("³ª´®°íµñ", Font.PLAIN, 15));
 		lbl_x1_tplus.setHorizontalAlignment(SwingConstants.CENTER);
@@ -130,10 +130,10 @@ public class Testbench_main extends JApplet{
 		lbl_x2_SineCosine.setBounds(145, 520, 50, 20);
 		getContentPane().add(lbl_x2_SineCosine);
 		
-		textField_6 = new JTextField();
-		textField_6.setBounds(195, 520, 40, 20);
-		getContentPane().add(textField_6);
-		textField_6.setColumns(10);
+		tf_x2_frequency = new TF_frequency();
+		tf_x2_frequency.setBounds(195, 520, 40, 20);
+		getContentPane().add(tf_x2_frequency);
+		tf_x2_frequency.setColumns(10);
 
 		lbl_x2_tplus.setFont(new Font("³ª´®°íµñ", Font.PLAIN, 15));
 		lbl_x2_tplus.setBounds(240, 520, 20, 20);
@@ -198,6 +198,8 @@ public class Testbench_main extends JApplet{
 		tf_duration_finish.addKeyListener(tf_duration_finish);
 		tf_x1_amplitude.addKeyListener(tf_x1_amplitude);
 		tf_x2_amplitude.addKeyListener(tf_x2_amplitude);
+		tf_x1_frequency.addKeyListener(tf_x1_frequency);
+		tf_x2_frequency.addKeyListener(tf_x2_frequency);
 		
 		getContentPane().add(canvas);
 	}

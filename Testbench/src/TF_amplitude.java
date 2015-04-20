@@ -28,6 +28,22 @@ public class TF_amplitude extends JTextField implements KeyListener{
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		str = getText();
+		
+		try {
+			if(str.indexOf("-") == 0){
+				isPositive = false;
+			}
+			else if(str.indexOf("-") > 0){
+				setText("");
+			}
+			else{
+				isPositive = true;
+			}
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		if(isPositive){
 			if(str.length() > 4){
 				length_flag = true;
@@ -51,27 +67,12 @@ public class TF_amplitude extends JTextField implements KeyListener{
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		if(!length_flag){
-			if(e.getKeyChar() == 45){ // negative number.
-				isPositive = false;
-			}
-			else if(e.getKeyChar() != 45){ // Positive number.
-				isPositive = true;
-			}
 			if(!Character.isDigit(e.getKeyChar()) && e.getKeyChar() != 8 && e.getKeyChar() != 45){
 				e.consume();
 			}
 		}
 		else{
 			e.consume();
-		}
-		
-		
-		try{
-			if(str.indexOf("-") != 0){ // wrong operand position.
-				setText("");
-			}
-		}catch(Exception er){
-			
 		}
 	}
 
