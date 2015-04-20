@@ -1,8 +1,7 @@
 import javax.swing.JTextField;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-// import java.util.regex.*;
+
 
 public class TF_duration extends JTextField implements KeyListener{
 
@@ -37,8 +36,8 @@ public class TF_duration extends JTextField implements KeyListener{
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		if(!dot_flag){ // Dot not typed yet.
-			if(!Character.isDigit(e.getKeyChar()) && e.getKeyChar() != 8 && e.getKeyChar() != 45 && e.getKeyChar() != 46){
-				// 8 = back space, 45 = minus, 46 = dot
+			if(!Character.isDigit(e.getKeyChar()) && e.getKeyChar() != 8 && e.getKeyChar() != 46){
+				// 8 = back space, 46 = dot
 				e.consume();
 			}
 			if(e.getKeyChar() == 46){
@@ -46,10 +45,17 @@ public class TF_duration extends JTextField implements KeyListener{
 			}
 		}
 		else{ // Dot typed.
-			if(!Character.isDigit(e.getKeyChar()) && e.getKeyChar() != 8 && e.getKeyChar() != 45){
-				// 8 = back space, 45 = minus, 46 = dot
+			if(!Character.isDigit(e.getKeyChar()) && e.getKeyChar() != 8){
+				// 8 = back space, 46 = dot
 				e.consume();
 			}
+		}
+		try{
+			if(str.indexOf(".") == 0){
+				setText("0" + str);
+			}
+		}catch(Exception er){
+			
 		}
 	}
 

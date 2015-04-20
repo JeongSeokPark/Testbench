@@ -19,10 +19,10 @@ public class Testbench_main extends JApplet{
 	Canvas_class canvas;
 	private TF_duration tf_duration_start;
 	private TF_duration tf_duration_finish;
-	private JTextField textField_2;
+	private TF_amplitude tf_x1_amplitude;
+	private TF_amplitude tf_x2_amplitude;
 	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private JTextField textField_4;	
 	private JTextField textField_6;
 	private JTextField textField_7;
 	
@@ -84,10 +84,10 @@ public class Testbench_main extends JApplet{
 		lbl_x1.setBounds(50, 490, 50, 20);
 		getContentPane().add(lbl_x1);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(100, 490, 40, 20);
-		getContentPane().add(textField_2);
-		textField_2.setColumns(10);
+		tf_x1_amplitude = new TF_amplitude();
+		tf_x1_amplitude.setBounds(100, 490, 40, 20);
+		getContentPane().add(tf_x1_amplitude);
+		tf_x1_amplitude.setColumns(10);
 
 		lbl_x1_SineCosine.setFont(new Font("³ª´®°íµñ", Font.PLAIN, 15));
 		lbl_x1_SineCosine.setBounds(145, 490, 50, 20);
@@ -121,10 +121,10 @@ public class Testbench_main extends JApplet{
 		lbl_x2.setBounds(50, 520, 50, 20);
 		getContentPane().add(lbl_x2);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(100, 520, 40, 20);
-		getContentPane().add(textField_5);
-		textField_5.setColumns(10);
+		tf_x2_amplitude = new TF_amplitude();
+		tf_x2_amplitude.setBounds(100, 520, 40, 20);
+		getContentPane().add(tf_x2_amplitude);
+		tf_x2_amplitude.setColumns(10);
 
 		lbl_x2_SineCosine.setFont(new Font("³ª´®°íµñ", Font.PLAIN, 15));
 		lbl_x2_SineCosine.setBounds(145, 520, 50, 20);
@@ -195,6 +195,9 @@ public class Testbench_main extends JApplet{
 		btn_x3_gen_m.addMouseListener(canvas);
 		btn_reset.addMouseListener(canvas);
 		tf_duration_start.addKeyListener(tf_duration_start);
+		tf_duration_finish.addKeyListener(tf_duration_finish);
+		tf_x1_amplitude.addKeyListener(tf_x1_amplitude);
+		tf_x2_amplitude.addKeyListener(tf_x2_amplitude);
 		
 		getContentPane().add(canvas);
 	}
