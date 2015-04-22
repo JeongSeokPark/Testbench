@@ -30,15 +30,19 @@ public class Canvas_class extends Canvas implements MouseListener{
 		// TODO Auto-generated method stub
 		if(e.getSource() == main.btn_x1_Cosine){
 			System.out.println("btn_x1_Cosine clicked.");
+			main.lbl_x1_SineCosine.setText("Cos(2\u03C0");
 		}
 		else if (e.getSource() == main.btn_x1_sine){
 			System.out.println("btn_x1_sine clicked.");
+			main.lbl_x1_SineCosine.setText("Sin(2\u03C0");
 		}
 		else if (e.getSource() == main.btn_x2_sine){
 			System.out.println("btn_x2_sine clicked.");
+			main.lbl_x2_SineCosine.setText("Sin(2\u03C0");
 		}
 		else if (e.getSource() == main.btn_x2_Cosine){
 			System.out.println("btn_x2_Cosine clicked.");
+			main.lbl_x2_SineCosine.setText("Cos(2\u03C0");
 		}
 		else if (e.getSource() == main.btn_x1_gen){
 			System.out.println("btn_x1_gen clicked.");
@@ -48,9 +52,11 @@ public class Canvas_class extends Canvas implements MouseListener{
 		}
 		else if (e.getSource() == main.btn_x3_gen_a){
 			System.out.println("btn_x3_gen_a clicked.");
+			main.lbl_x3.setText("X\u2083(t) = X\u2081(t) + X\u2082(t)");
 		}
 		else if (e.getSource() == main.btn_x3_gen_m){
 			System.out.println("btn_x3_gen_m clicked.");
+			main.lbl_x3.setText("X\u2083(t) = X\u2081(t) * X\u2082(t)");
 		}
 		else if (e.getSource() == main.btn_reset){
 			System.out.println("btn_reset clicked.");

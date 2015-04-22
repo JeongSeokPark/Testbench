@@ -2,7 +2,6 @@
 import javax.swing.JApplet;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
@@ -17,14 +16,14 @@ public class Testbench_main extends JApplet{
 	}
 	
 	Canvas_class canvas;
-	private TF_duration tf_duration_start;
-	private TF_duration tf_duration_finish;
-	private TF_amplitude tf_x1_amplitude;
-	private TF_amplitude tf_x2_amplitude;
-	private TF_frequency tf_x1_frequency;
-	private TF_frequency tf_x2_frequency;
-	private JTextField textField_4;	
-	private JTextField textField_7;
+	public TF_duration tf_duration_start;
+	public TF_duration tf_duration_finish;
+	public TF_amplitude tf_x1_amplitude;
+	public TF_amplitude tf_x2_amplitude;
+	public TF_frequency tf_x1_frequency;
+	public TF_frequency tf_x2_frequency;
+	public TF_phase tf_x1_phase;	
+	public TF_phase tf_x2_phase;
 	
 	public JButton btn_x1_sine = new JButton("Sine");
 	public JButton btn_x1_Cosine = new JButton("Cosine");
@@ -36,20 +35,22 @@ public class Testbench_main extends JApplet{
 	public JButton btn_x3_gen_m = new JButton("Gen ( * )");
 	public JButton btn_reset = new JButton("Reset Graph");
 	
+	public JLabel lbl_x1_SineCosine = new JLabel("Cos(2\u03C0");
+	public JLabel lbl_x2_SineCosine = new JLabel("Cos(2\u03C0");
+	public JLabel lbl_x1_tplus = new JLabel("t +");
+	public JLabel lbl_x2_tplus = new JLabel("t +");
+	public JLabel lbl_equal1 = new JLabel(") = ");
+	public JLabel lbl_equal2 = new JLabel(") = ");
+	public JLabel lbl_X1_result = new JLabel("10000 Cos(2\u03C0200t + 100)");
+	public JLabel lbl_X2_result = new JLabel("10000 Cos(2\u03C0200t + 100)");
+	public JLabel lbl_x3 = new JLabel("X\u2083(t) = X\u2081(t) + X\u2082(t)");
+	
 	private JLabel lbl_Plot_Duration = new JLabel("\uAD6C\uAC04 \uC124\uC815 : ");
 	private JLabel lbl_to = new JLabel("~");
 	private JLabel lbl_sec = new JLabel("\uCD08");
-	private JLabel lbl_x1 = new JLabel("X\u2081(t) = ");
-	public JLabel lbl_x1_SineCosine = new JLabel("Cos(2\u03C0");
-	private JLabel lbl_x1_tplus = new JLabel("t +");
-	private JLabel lbl_equal1 = new JLabel(") = ");
-	public JLabel lbl_X1_result = new JLabel("10000 Cos(2\u03C0200t + 100)");
-	private JLabel lbl_x2 = new JLabel("X\u2082(t) = ");
-	public JLabel lbl_x2_SineCosine = new JLabel("Cos(2\u03C0");
-	private JLabel lbl_x2_tplus = new JLabel("t +");
-	private JLabel lbl_equal2 = new JLabel(") = ");
-	public JLabel lbl_X2_result = new JLabel("10000 Cos(2\u03C0200t + 100)");
-	private JLabel lbl_x3 = new JLabel("X\u2083(t) = X\u2081(t) + X\u2082(t)");
+	private JLabel lbl_x1 = new JLabel("X\u2081(t) = ");	
+	private JLabel lbl_x2 = new JLabel("X\u2082(t) = ");	
+	
 	
 	public void init(){
 		canvas = new Canvas_class(this);
@@ -103,10 +104,10 @@ public class Testbench_main extends JApplet{
 		lbl_x1_tplus.setBounds(240, 490, 20, 20);
 		getContentPane().add(lbl_x1_tplus);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(265, 490, 40, 20);
-		getContentPane().add(textField_4);
-		textField_4.setColumns(10);
+		tf_x1_phase = new TF_phase();
+		tf_x1_phase.setBounds(265, 490, 40, 20);
+		getContentPane().add(tf_x1_phase);
+		tf_x1_phase.setColumns(10);
 
 		lbl_equal1.setFont(new Font("³ª´®°íµñ", Font.PLAIN, 15));
 		lbl_equal1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -139,10 +140,10 @@ public class Testbench_main extends JApplet{
 		lbl_x2_tplus.setBounds(240, 520, 20, 20);
 		getContentPane().add(lbl_x2_tplus);
 		
-		textField_7 = new JTextField();
-		textField_7.setBounds(265, 520, 40, 20);
-		getContentPane().add(textField_7);
-		textField_7.setColumns(10);
+		tf_x2_phase = new TF_phase();
+		tf_x2_phase.setBounds(265, 520, 40, 20);
+		getContentPane().add(tf_x2_phase);
+		tf_x2_phase.setColumns(10);
 
 		lbl_equal2.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_equal2.setFont(new Font("³ª´®°íµñ", Font.PLAIN, 15));
@@ -200,6 +201,8 @@ public class Testbench_main extends JApplet{
 		tf_x2_amplitude.addKeyListener(tf_x2_amplitude);
 		tf_x1_frequency.addKeyListener(tf_x1_frequency);
 		tf_x2_frequency.addKeyListener(tf_x2_frequency);
+		tf_x1_phase.addKeyListener(tf_x1_phase);
+		tf_x2_phase.addKeyListener(tf_x2_phase);
 		
 		getContentPane().add(canvas);
 	}
