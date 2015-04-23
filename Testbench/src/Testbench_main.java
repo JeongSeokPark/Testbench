@@ -41,12 +41,12 @@ public class Testbench_main extends JApplet{
 	
 	public JLabel lbl_x1_SineCosine = new JLabel("Cos(2\u03C0");
 	public JLabel lbl_x2_SineCosine = new JLabel("Cos(2\u03C0");
-	public JLabel lbl_x1_tplus = new JLabel("t +");
-	public JLabel lbl_x2_tplus = new JLabel("t +");
-	public JLabel lbl_equal1 = new JLabel(") = ");
-	public JLabel lbl_equal2 = new JLabel(") = ");
-	public JLabel lbl_X1_result = new JLabel("10000 Cos(2\u03C0200t + 100)");
-	public JLabel lbl_X2_result = new JLabel("10000 Cos(2\u03C0200t + 100)");
+	public JLabel lbl_x1_tplus = new JLabel("t + ");
+	public JLabel lbl_x2_tplus = new JLabel("t + ");
+	public JLabel lbl_equal1 = new JLabel(")");
+	public JLabel lbl_equal2 = new JLabel(")");
+	public JLabel lbl_X1_result = new JLabel("");
+	public JLabel lbl_X2_result = new JLabel("");
 	public JLabel lbl_x3 = new JLabel("X\u2083(t) = X\u2081(t) + X\u2082(t)");
 	
 	public JLabel lbl_x_axis_0;
@@ -133,7 +133,7 @@ public class Testbench_main extends JApplet{
 
 		lbl_x1_tplus.setFont(new Font("³ª´®°íµñ", Font.PLAIN, 15));
 		lbl_x1_tplus.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_x1_tplus.setBounds(240, 490 + y_modify, 20, 20);
+		lbl_x1_tplus.setBounds(240, 490 + y_modify, 25, 20);
 		getContentPane().add(lbl_x1_tplus);
 		
 		tf_x1_phase = new TF_phase();
@@ -169,7 +169,7 @@ public class Testbench_main extends JApplet{
 		tf_x2_frequency.setColumns(10);
 
 		lbl_x2_tplus.setFont(new Font("³ª´®°íµñ", Font.PLAIN, 15));
-		lbl_x2_tplus.setBounds(240, 520 + y_modify, 20, 20);
+		lbl_x2_tplus.setBounds(240, 520 + y_modify, 25, 20);
 		getContentPane().add(lbl_x2_tplus);
 		
 		tf_x2_phase = new TF_phase();
@@ -240,32 +240,32 @@ public class Testbench_main extends JApplet{
 		getContentPane().add(pn_grid);
 		pn_grid.setLayout(null);
 		
-		lbl_x_axis_0 = new JLabel("000");
-		lbl_x_axis_1 = new JLabel("111");
-		lbl_x_axis_2 = new JLabel("112");
-		lbl_x_axis_3 = new JLabel("113");
-		lbl_x_axis_4 = new JLabel("114");
-		lbl_x_axis_5 = new JLabel("115");
-		lbl_x_axis_6 = new JLabel("116");
-		lbl_x_axis_7 = new JLabel("117");
-		lbl_x_axis_8 = new JLabel("118");
-		lbl_x_axis_9 = new JLabel("119");
-		lbl_x_axis_10 = new JLabel("110");
+		lbl_x_axis_0 = new JLabel("");
+		lbl_x_axis_1 = new JLabel("");
+		lbl_x_axis_2 = new JLabel("");
+		lbl_x_axis_3 = new JLabel("");
+		lbl_x_axis_4 = new JLabel("");
+		lbl_x_axis_5 = new JLabel("");
+		lbl_x_axis_6 = new JLabel("");
+		lbl_x_axis_7 = new JLabel("");
+		lbl_x_axis_8 = new JLabel("");
+		lbl_x_axis_9 = new JLabel("");
+		lbl_x_axis_10 = new JLabel("");
 		lbl_x_axis_10.setHorizontalAlignment(SwingConstants.RIGHT);
 		
-		lbl_y_axis_0 = new JLabel("-10000");
+		lbl_y_axis_0 = new JLabel("");
 		lbl_y_axis_0.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbl_y_axis_1 = new JLabel("99999");
+		lbl_y_axis_1 = new JLabel("");
 		lbl_y_axis_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbl_y_axis_2 = new JLabel("112");
+		lbl_y_axis_2 = new JLabel("");
 		lbl_y_axis_2.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbl_y_axis_3 = new JLabel("113");
+		lbl_y_axis_3 = new JLabel("");
 		lbl_y_axis_3.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbl_y_axis_4 = new JLabel("114");
+		lbl_y_axis_4 = new JLabel("");
 		lbl_y_axis_4.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbl_y_axis_5 = new JLabel("115");
+		lbl_y_axis_5 = new JLabel("");
 		lbl_y_axis_5.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbl_y_axis_6 = new JLabel("116");
+		lbl_y_axis_6 = new JLabel("");
 		lbl_y_axis_6.setHorizontalAlignment(SwingConstants.RIGHT);
 		
 		pn_grid.add(lbl_x_axis_0);
@@ -298,7 +298,7 @@ public class Testbench_main extends JApplet{
 		lbl_x_axis_7.setBounds(490, 430, 30, 20);
 		lbl_x_axis_8.setBounds(550, 430, 30, 20);
 		lbl_x_axis_9.setBounds(610, 430, 30, 20);
-		lbl_x_axis_10.setBounds(640, 430, 30, 20);
+		lbl_x_axis_10.setBounds(635, 430, 35, 20);
 		
 		lbl_y_axis_0.setBounds(25, 0, 40, 20);
 		lbl_y_axis_1.setBounds(25, 60, 40, 20);
